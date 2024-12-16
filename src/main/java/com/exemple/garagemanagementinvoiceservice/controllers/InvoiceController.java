@@ -31,7 +31,7 @@ public class InvoiceController {
         return invoiceService.getInvoice(id);
     }
 
-    @GetMapping
+    @GetMapping("/client")
     public List<Invoice> getInvoiceByClient(@RequestParam String clientId){
         return invoiceService.getInvoiceByClient(clientId);
     }
