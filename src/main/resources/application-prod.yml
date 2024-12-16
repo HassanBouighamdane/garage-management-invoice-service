@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: invoice-service
+  data:
+    mongodb:
+      host: ${HOST}
+      database: ${DB_NAME}
+      port: ${DB_PORT}
+      username: ${DB_USERNAME}
+      password: ${DB_PASSWORD}
+
+
+server:
+  port: 8085
