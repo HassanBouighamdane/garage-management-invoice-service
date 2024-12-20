@@ -24,8 +24,15 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public Invoice generateInvoice() {
-        return null;
+    public String generateInvoice(Invoice invoiceDetails) {
+        // Generate a simple invoice string
+        String invoice = "Invoice Details:\n" +
+                "Vehicle VIN: " + invoiceDetails.getVehicleVin() + "\n" +
+                "Amount: " + invoiceDetails.getAmount() + "\n" +
+                "Date Issued: " + invoiceDetails.getDateIssued();
+        System.out.println(invoice);
+        invoiceRepository.save(invoiceDetails);
+        return invoice;
     }
 
     @Override
@@ -42,8 +49,4 @@ public class InvoiceServiceImpl implements InvoiceService {
         return invoice.get();
     }
 
-    @Override
-    public List<Invoice> getInvoiceByClient(String clientId) {
-        return invoiceRepository.findAllByClientId(clientId);
-    }
 }

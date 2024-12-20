@@ -3,12 +3,8 @@ spring:
     name: invoice-service
   data:
     mongodb:
-      host: localhost
-      database: invoice_db
-      port: 27017
-      username: mongo
-      password: PWH@ss@n
+      uri : mongodb://root:root@localhost:27017/invoices?authSource=admin
 
 
 server:
-  port: 8085
+  port: 8084

@@ -22,19 +22,17 @@ public class InvoiceController {
     }
 
     @PostMapping
-    public Invoice generateInvoice(){
-        return invoiceService.generateInvoice();
+    public String generateInvoice(@RequestBody Invoice invoice) {
+        System.out.println("Received Invoice: " + invoice);
+        return invoiceService.generateInvoice(invoice);
     }
+
 
     @GetMapping("/{id}")
     public Invoice getInvoice(@PathVariable Long id){
         return invoiceService.getInvoice(id);
     }
 
-    @GetMapping("/client")
-    public List<Invoice> getInvoiceByClient(@RequestParam String clientId){
-        return invoiceService.getInvoiceByClient(clientId);
-    }
 
     @GetMapping("/payment/{id}")
     public Invoice markInvoicePaid(@PathVariable Long id){

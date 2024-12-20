@@ -1,5 +1,8 @@
 package com.exemple.garagemanagementinvoiceservice.entities;
 import com.exemple.garagemanagementinvoiceservice.entities.enums.Status;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import lombok.Generated;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -12,11 +15,12 @@ import java.util.Date;
 @Getter @Setter
 public class Invoice {
     @Id
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
-    private String clientId;
+    private String vehicleVin;
     private long taskId;
     private double amount;
     private Date dateIssued;
-    private Status status;
+    private String status;
 }
