@@ -30,10 +30,11 @@ public class InvoiceServiceImpl implements InvoiceService {
                 "Vehicle VIN: " + invoiceDetails.getVehicleVin() + "\n" +
                 "Amount: " + invoiceDetails.getAmount() + "\n" +
                 "Date Issued: " + invoiceDetails.getDateIssued();
-        System.out.println(invoice);
-        invoiceRepository.save(invoiceDetails);
+        System.out.println("Generated Invoice: " + invoice);
+        //invoiceRepository.save(invoiceDetails); // Save to DB
         return invoice;
     }
+
 
     @Override
     public Invoice getInvoice(Long id) {
